@@ -1,0 +1,13 @@
+[package]
+name = "back-end"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+actix-web = "^4"
+uuid = {version="^0.8", features = ["v4"]}
+serde = {version="^1", features = ["derive"]}
+
+diesel = { version = "^2", features = ["postgres"] }
+# Adicionando a dependência do PostgreSQL (requerida pelo Diesel)
+postgres = "^0.19" 
