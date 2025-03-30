@@ -7,7 +7,7 @@ edition = "2024"
 actix-web = "^4"
 uuid = {version="^0.8", features = ["v4"]}
 serde = {version="^1", features = ["derive"]}
-
+dotenv = "0.15"
 diesel = { version = "^2", features = ["postgres"] }
 # Adicionando a dependência do PostgreSQL (requerida pelo Diesel)
 postgres = "^0.19" 
