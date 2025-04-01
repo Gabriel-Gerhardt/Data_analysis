@@ -22,7 +22,7 @@ fn execute_sql_file(conn: &mut PgConnection, file_path: &str) {
         .expect(&format!("Erro ao executar SQL no arquivo {}", file_path));
 }
 
-pub fn run_migration() {
+fn run_migration() {
     let mut conn = establish_connection();
     
     // Execute a migração UP
@@ -30,4 +30,12 @@ pub fn run_migration() {
     execute_sql_file(&mut conn,  "migrations/tables/down.sql");
     // Se precisar rodar a migração DOWN, basta executar a função abaixo
     // execute_sql_file(&conn, "migrations/create_users_table/down.sql");
+}
+
+
+pub fn db_op(){
+
+    let database_url = env::var("DATABASE_URL").expect("DATABASE_URL not set");
+    println!("Database URL: {}", database_url);
+    run_migration();
 }
